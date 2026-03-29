@@ -141,10 +141,11 @@ if __name__ == '__main__':
         print("  GET  /health")
         print("  POST /predict")
         print("\nExample request:")
-        print('curl -X POST http://localhost:5001/predict \\')
+        print('curl -X POST http://localhost:10000/predict \\')
         print('  -H "Content-Type: application/json" \\')
         print('  -d \'{"distance": 150, "quantity": 8.5}\'')
         
-        app.run(host='0.0.0.0', port=5001, debug=True)
+        port = int(os.environ.get("PORT", 10000))  # ✅ IMPORTANT
+        app.run(host='0.0.0.0', port=port)
     else:
         print("❌ Failed to load models. Please run 'python train_models.py' first.")
