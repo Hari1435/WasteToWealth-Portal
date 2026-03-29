@@ -388,7 +388,7 @@ out/
 
 # Gatsby
 .cache/
-public/
+
 
 # Serverless
 .serverless/
